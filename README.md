@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Verdura Market
+
+A mobile-friendly supermarket web app built with Next.js and SQLite.
 
 ## Getting Started
 
