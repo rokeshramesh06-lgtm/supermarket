@@ -24,9 +24,13 @@ function buildHref(category: string, query: string) {
 
 export function FilterBar({ query, activeCategory }: FilterBarProps) {
   return (
-    <section className="panel p-6">
+    <section className="panel panel-strong overflow-hidden p-6">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,122,89,0.1),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(15,118,110,0.12),transparent_26%)]" />
       <p className="eyebrow">Search & Categories</p>
       <h2 className="mt-3 text-3xl font-semibold">Find what you need quickly.</h2>
+      <p className="mt-2 max-w-xl text-sm text-[color:var(--muted)]">
+        Search the live catalogue or jump into curated product groups designed with a cleaner store navigation flow.
+      </p>
       <form action="/" method="get" className="mt-5 flex flex-col gap-3 sm:flex-row">
         <input type="hidden" name="category" value={activeCategory} />
         <div className="relative flex-1">

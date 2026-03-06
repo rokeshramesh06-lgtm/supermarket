@@ -23,6 +23,8 @@ export const metadata: Metadata = {
     "A modern mobile-friendly supermarket experience built with Next.js and SQLite.",
 };
 
+export const runtime = "nodejs";
+
 export default async function RootLayout({
   children,
 }: Readonly<{

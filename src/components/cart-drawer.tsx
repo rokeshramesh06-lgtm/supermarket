@@ -46,7 +46,7 @@ export function CartDrawer({ open, onClose, user }: CartDrawerProps) {
     <div className="fixed inset-0 z-50 flex justify-end bg-black/35 backdrop-blur-sm">
       <button type="button" className="flex-1" aria-label="Close cart" onClick={onClose} />
 
-      <aside className="flex h-full w-full max-w-md flex-col bg-[#fcf8f0] p-5 shadow-2xl">
+      <aside className="flex h-full w-full max-w-md flex-col bg-[linear-gradient(180deg,#f8fbff_0%,#edf4fb_100%)] p-5 shadow-2xl">
         <div className="flex items-center justify-between">
           <div>
             <p className="eyebrow">Shopping Cart</p>
@@ -61,7 +61,7 @@ export function CartDrawer({ open, onClose, user }: CartDrawerProps) {
           <>
             <div className="mt-6 flex-1 space-y-4 overflow-y-auto pr-1">
               {items.map((item) => (
-                <article key={item.productId} className="rounded-[24px] border border-[color:var(--border)] bg-white/80 p-4">
+                <article key={item.productId} className="rounded-[24px] border border-[color:var(--border)] bg-white/82 p-4">
                   <div className="flex gap-4">
                     <div className="relative h-20 w-20 overflow-hidden rounded-2xl">
                       <Image
@@ -77,7 +77,7 @@ export function CartDrawer({ open, onClose, user }: CartDrawerProps) {
                         <div>
                           <h3 className="line-clamp-2 font-semibold">{item.name}</h3>
                           <p className="mt-1 text-sm text-[color:var(--muted)]">
-                            {formatCurrency(item.price)} • {item.unit}
+                            {formatCurrency(item.price)} | {item.unit}
                           </p>
                         </div>
                         <button type="button" className="text-[color:var(--muted)]" onClick={() => removeItem(item.productId)}>
@@ -86,7 +86,7 @@ export function CartDrawer({ open, onClose, user }: CartDrawerProps) {
                       </div>
 
                       <div className="mt-4 flex items-center justify-between">
-                        <div className="flex items-center gap-2 rounded-full bg-[#f6f0e2] px-2 py-1">
+                        <div className="flex items-center gap-2 rounded-full bg-[#eef7f5] px-2 py-1">
                           <button type="button" className="rounded-full p-1 text-[color:var(--brand)]" onClick={() => updateQuantity(item.productId, item.quantity - 1)}>
                             <Minus className="h-4 w-4" />
                           </button>
@@ -103,7 +103,7 @@ export function CartDrawer({ open, onClose, user }: CartDrawerProps) {
               ))}
             </div>
 
-            <div className="mt-5 rounded-[28px] border border-[color:var(--border)] bg-white/85 p-5">
+            <div className="mt-5 rounded-[28px] border border-[color:var(--border)] bg-white/88 p-5">
               <div className="flex items-center justify-between text-sm text-[color:var(--muted)]">
                 <span>Subtotal</span>
                 <span>{formatCurrency(subtotal)}</span>

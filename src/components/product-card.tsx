@@ -6,15 +6,16 @@ import { formatCurrency } from "@/lib/utils";
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <article className="panel overflow-hidden">
+    <article className="panel group overflow-hidden transition-transform duration-300 hover:-translate-y-1">
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={product.imageUrl}
           alt={product.name}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-          className="object-cover transition-transform duration-500 hover:scale-105"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/35 to-transparent" />
         <div className="absolute inset-x-0 top-0 flex items-start justify-between p-4">
           <span className="rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[color:var(--brand)]">
             {product.category}
@@ -33,8 +34,12 @@ export function ProductCard({ product }: { product: Product }) {
           <div>
             <h3 className="text-2xl font-semibold">{product.name}</h3>
             <p className="mt-2 text-sm text-[color:var(--muted)]">{product.description}</p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="chip text-[color:var(--brand)]">Available today</span>
+              <span className="chip text-[color:var(--muted)]">Fresh stock</span>
+            </div>
           </div>
-          <div className="text-right">
+          <div className="rounded-[22px] bg-[linear-gradient(180deg,#f0fbf8_0%,#e1f7f3_100%)] px-4 py-3 text-right shadow-[0_14px_28px_rgba(15,118,110,0.08)]">
             <p className="text-xl font-bold text-[color:var(--brand)]">{formatCurrency(product.price)}</p>
             <p className="text-sm text-[color:var(--muted)]">{product.unit}</p>
           </div>

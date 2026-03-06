@@ -19,9 +19,9 @@ export function Header({ user }: HeaderProps) {
   return (
     <>
       <header className="sticky top-0 z-40 px-4 pt-4 sm:px-6 lg:px-8">
-        <div className="page-shell panel flex items-center justify-between px-5 py-4">
+        <div className="page-shell panel panel-strong flex items-center justify-between px-5 py-4">
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[color:var(--brand)] text-white">
+            <div className="flex h-11 w-11 items-center justify-center rounded-[18px] bg-[linear-gradient(135deg,#0f766e_0%,#23b7ab_100%)] text-white shadow-[0_12px_24px_rgba(15,118,110,0.22)]">
               <ShoppingBasket className="h-5 w-5" />
             </div>
             <div>
@@ -29,6 +29,9 @@ export function Header({ user }: HeaderProps) {
                 Supermarket
               </p>
               <p className="display-font text-2xl font-semibold leading-none">Verdura Market</p>
+              <p className="hidden text-xs text-[color:var(--muted)] sm:block">
+                Fresh delivery with premium retail styling
+              </p>
             </div>
           </Link>
 
@@ -64,7 +67,7 @@ export function Header({ user }: HeaderProps) {
             </button>
 
             {user ? (
-              <div className="hidden items-center gap-2 rounded-full bg-white/70 px-4 py-2 md:flex">
+              <div className="hidden items-center gap-2 rounded-full border border-white/70 bg-white/80 px-4 py-2 shadow-[0_12px_22px_rgba(15,23,42,0.06)] md:flex">
                 {user.role === "admin" ? (
                   <LayoutDashboard className="h-4 w-4 text-[color:var(--brand)]" />
                 ) : (
@@ -81,7 +84,7 @@ export function Header({ user }: HeaderProps) {
 
             <button
               type="button"
-              className="rounded-full bg-white/70 p-2 md:hidden"
+              className="rounded-full border border-white/70 bg-white/80 p-2 md:hidden"
               onClick={() => setMobileOpen((current) => !current)}
               aria-label="Toggle menu"
             >
@@ -91,7 +94,7 @@ export function Header({ user }: HeaderProps) {
         </div>
 
         {mobileOpen ? (
-          <div className="page-shell panel mt-3 flex flex-col gap-3 px-5 py-4 md:hidden">
+          <div className="page-shell panel panel-strong mt-3 flex flex-col gap-3 px-5 py-4 md:hidden">
             <Link href="/#products" onClick={() => setMobileOpen(false)}>
               Products
             </Link>

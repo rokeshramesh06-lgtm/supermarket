@@ -34,27 +34,27 @@ type AddressRow = {
 const categoryMeta: Record<ProductCategory, Omit<CategorySummary, "name" | "count">> = {
   Fruits: {
     blurb: "Seasonal sweetness and snackable freshness.",
-    accent: "from-[#fff1d9] to-[#ffd9c3]",
+    accent: "from-[#fff0ea] via-[#ffe2d7] to-[#ffd0bf]",
   },
   Vegetables: {
     blurb: "Leafy greens and kitchen staples for daily cooking.",
-    accent: "from-[#e5f3dd] to-[#cde7c7]",
+    accent: "from-[#e6faf2] via-[#d4f2e7] to-[#c2ebdb]",
   },
   Dairy: {
     blurb: "Milk, yogurt, and chilled comfort for every meal.",
-    accent: "from-[#f6f0ff] to-[#e7e4ff]",
+    accent: "from-[#f4f2ff] via-[#eceafd] to-[#e4e2fb]",
   },
   Beverages: {
     blurb: "Juices, brews, and ready-to-pour refreshers.",
-    accent: "from-[#e7f6f3] to-[#d3edf0]",
+    accent: "from-[#e7f5ff] via-[#dceeff] to-[#cee5ff]",
   },
   Snacks: {
     blurb: "Crunchy, savoury, and energy-packed bites.",
-    accent: "from-[#fff3df] to-[#ffe5ca]",
+    accent: "from-[#fff4de] via-[#ffeac8] to-[#ffdeb3]",
   },
   Groceries: {
     blurb: "Pantry foundations for everyday cooking.",
-    accent: "from-[#efe6d8] to-[#deceb6]",
+    accent: "from-[#f4eee7] via-[#ebe1d0] to-[#ddd0bb]",
   },
 };
 
