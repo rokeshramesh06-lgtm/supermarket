@@ -1,13 +1,25 @@
 import { mkdirSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 import bcrypt from "bcryptjs";
 import Database from "better-sqlite3";
 
+const isVercel = Boolean(process.env.VERCEL);
 const dataDirectory = join(process.cwd(), "data");
-mkdirSync(dataDirectory, { recursive: true });
 
-const db = new Database(join(dataDirectory, "supermarket.sqlite"));
-db.pragma("journal_mode = WAL");
+if (!isVercel) {
+  mkdirSync(dataDirectory, { recursive: true });
+}
+
+const databasePath = isVercel
+  ? join(tmpdir(), "rokes-verdura-market.sqlite")
+  : join(dataDirectory, "supermarket.sqlite");
+
+const db = new Database(databasePath);
+
+if (!isVercel) {
+  db.pragma("journal_mode = WAL");
+}
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS app_meta (
